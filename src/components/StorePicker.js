@@ -4,11 +4,11 @@ class StorePicker extends React.Component {
   render() {
     return (
       <form action="" className="store-selector">
-      {/* comment line */}
+        {/* comment line */}
         <h2> Please Enter a store</h2>
-        <input type="text" required placeholder="Store Name ➡️"/>
+        <input type="text" required placeholder="Store Name ➡️" />
       </form>
-    )
+    );
   }
 }
 
