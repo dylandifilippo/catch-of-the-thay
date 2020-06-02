@@ -1,8 +1,10 @@
+/* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
 import Header from './Header';
 import Order from './Order';
 import Inventory from './Inventory';
 import sampleFishes from '../sample-fishes';
+import Fish from './Fish';
 
 class App extends Component {
   state = {
@@ -31,6 +33,11 @@ class App extends Component {
       <div className="catch-of-the-day">
         <div className="menu">
           <Header tagline="Wes is cool" />
+          <ul className="fishes">
+            {Object.keys(this.state.fishes).map(key => (
+              <Fish key={key} details={this.state.fishes[key]} />
+            ))}
+          </ul>
         </div>
         <Order />
         <Inventory

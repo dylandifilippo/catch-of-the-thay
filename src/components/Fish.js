@@ -1,0 +1,24 @@
+/* eslint-disable react/button-has-type */
+/* eslint-disable react/prop-types */
+/* eslint-disable react/destructuring-assignment */
+import React, { Component } from 'react';
+import { formatPrice } from '../helpers';
+
+class Fish extends Component {
+  render() {
+    const { name, image, price, desc, status } = this.props.details;
+    return (
+      <li className="menu-fish">
+        <img src={image} alt={name} />
+        <h3 className="fish-name">
+          {name}
+          <span className="price">{formatPrice(price)}</span>
+        </h3>
+        <p>{desc}</p>
+        <button>Add To Cart</button>
+      </li>
+    );
+  }
+}
+
+export default Fish;
