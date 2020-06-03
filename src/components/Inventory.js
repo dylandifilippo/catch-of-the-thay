@@ -1,12 +1,25 @@
-/* eslint-disable*/
-import React, { Component } from 'react';
-import AddFishForm from './AddFishForm';
+/* eslint-disable react/button-has-type */
+/* eslint-disable react/prop-types */
+/* eslint-disable react/destructuring-assignment */
 
-class Inventory extends Component {
+import React from 'react';
+import AddFishForm from './AddFishForm';
+import EditFishForm from './EditFishForm';
+
+class Inventory extends React.Component {
   render() {
     return (
       <div className="inventory">
         <h2>Inventory</h2>
+        {Object.keys(this.props.fishes).map(key => (
+          <EditFishForm
+            key={key}
+            index={key}
+            fish={this.props.fishes[key]}
+            updateFish={this.props.updateFish}
+            deleteFish={this.props.deleteFish}
+          />
+        ))}
         <AddFishForm addFish={this.props.addFish} />
         <button onClick={this.props.loadSampleFishes}>
           Load Sample Fishes
