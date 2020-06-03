@@ -23,6 +23,10 @@ class App extends Component {
     });
   }
 
+  componentDidUpdate() {
+    console.log(this.state.order);
+  }
+
   componentWillUnmount() {
     base.removeBinding(this.ref);
   }
