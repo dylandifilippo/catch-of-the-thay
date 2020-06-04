@@ -9,6 +9,10 @@
   ],
   "routes": [
     {
+      "src": "^/images/(.*)",
+      "dest": "/images/$1"
+    },
+    {
       "src": "^/static/(.*)",
       "dest": "/static/$1"
     },
@@ -38,10 +42,6 @@
     {
       "src": "^/(.*)",
       "dest": "/index.html"
-    },
-    {
-      "src": "^/images/(.*)",
-      "dest": "/images/$1"
     }
   ]
 }
